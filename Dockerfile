@@ -32,7 +32,7 @@ RUN yum install -y bind-utils nc telnet
 USER 1001
 
 
-CMD /usr/bin/bash
+CMD while true; do sleep 120 ; done
 
 #run it with
  #docker run -p 80:80 6e3c25bdca9b
