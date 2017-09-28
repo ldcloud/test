@@ -11,12 +11,13 @@ FROM centos:centos7
 MAINTAINER Steve Pousty <thesteve0@redhat.com>
 
 RUN yum install -y --setopt=tsflags=nodocs httpd.x86_64 && yum clean all -y
+RUN yum install -y bind-utils nc telnet
 
 # A custom httpd.conf that
 # 1. binds to port 8080
 # 2. sends all logs to stdout through log = "|more"
 COPY conf/httpd.conf /etc/httpd/conf/httpd.conf
-
+COPY index.html /var/www/html
 #We will also bind it to a mount point where we can put stuff
 
 #Expose the port
