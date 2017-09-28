@@ -12,5 +12,5 @@ RUN yum update -y && \
     yum clean all && yum autoremove -y && \
     rm -rf /tmp/* /var/tmp/*
 
-USER dfx
+USER ${USER_UID}
 CMD ["/bin/bash"]
