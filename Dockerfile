@@ -11,7 +11,7 @@ FROM centos:centos7
 MAINTAINER Derek Foo <dfoodfoo@gmail.com>
 
 #RUN yum install -y --setopt=tsflags=nodocs httpd.x86_64 && yum clean all -y
-RUN yum install -y bind-utils nc telnet
+RUN yum install -y bind-utils nc telnet net-tools
 
 # A custom httpd.conf that
 # 1. binds to port 8080
