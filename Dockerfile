@@ -32,7 +32,7 @@ RUN yum install -y bind-utils nc telnet
 USER 1001
 
 
-CMD while true; do sleep 120 ; done
+CMD while true; do echo "All I do is sleep 300 seconds continuosly to keep this system up."; sleep 300 ; done
 
 #run it with
  #docker run -p 80:80 6e3c25bdca9b
