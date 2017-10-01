@@ -31,7 +31,7 @@ RUN yum install -y bind-utils nc telnet net-tools
 
 USER 1001
 
-ENTRYPOING /usr/bin/bash
+ENTRYPOINT /usr/bin/bash
 #CMD while true; do echo "All I do is sleep 300 seconds continuously to keep this system up."; sleep 300 ; done
 
 #run it with
