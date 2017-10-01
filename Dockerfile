@@ -31,8 +31,8 @@ RUN yum install -y bind-utils nc telnet net-tools
 
 USER 1001
 
-
-CMD while true; do echo "All I do is sleep 300 seconds continuously to keep this system up."; sleep 300 ; done
+ENTRYPOING /usr/bin/bash
+#CMD while true; do echo "All I do is sleep 300 seconds continuously to keep this system up."; sleep 300 ; done
 
 #run it with
  #docker run -p 80:80 6e3c25bdca9b
