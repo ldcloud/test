@@ -11,7 +11,7 @@ FROM registry.access.redhat.com/rhel7
 MAINTAINER Derek Foo <dfoodfoo@gmail.com>
 
 #RUN yum install -y --setopt=tsflags=nodocs httpd.x86_64 && yum clean all -y
-RUN yum -y install wget
+#RUN yum -y install wget
 RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
 RUN yum -y install java-1.8.0-openjdk.x86_64 apache-maven bind-utils nc telnet net-tools git
 RUN yum clean all
