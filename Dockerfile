@@ -11,8 +11,9 @@ FROM registry.access.redhat.com/rhel7
 MAINTAINER Derek Foo <dfoodfoo@gmail.com>
 
 #RUN yum install -y --setopt=tsflags=nodocs httpd.x86_64 && yum clean all -y
-RUN yum -y install epel-release
 RUN yum -y install wget
+RUN wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+RUN yum -y install epel-release
 RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
 RUN yum -y install java-1.8.0-openjdk.x86_64 bind-utils nc telnet net-tools git apache-maven
 RUN yum clean all
