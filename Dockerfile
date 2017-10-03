@@ -11,7 +11,10 @@ FROM registry.access.redhat.com/rhel7
 MAINTAINER Derek Foo <dfoodfoo@gmail.com>
 
 #RUN yum install -y --setopt=tsflags=nodocs httpd.x86_64 && yum clean all -y
-RUN yum install -y bind-utils nc telnet net-tools git
+RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+RUN yum -y install java-1.8.0-openjdk.x86_64 apache-maven bind-utils nc telnet net-tools git
+RUN yum clean all
+RUN groupadd -r citrusgrp -g 1001 && useradd -u 1001 -r -g citrusgrp -m -d /opt/maven -s /usr/bin/bash -c "citrus" jboss && chmod 755 /opt/maven
 
 # A custom httpd.conf that
 # 1. binds to port 8080
