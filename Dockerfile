@@ -19,7 +19,7 @@ RUN rpm --import RPM-GPG-KEY-CentOS-7
 RUN wget http://mirror.centos.org/centos-7/7/os/x86_64/Packages/centos-release-7-4.1708.el7.centos.x86_64.rpm
 RUN wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/aether-1.13.1-13.el7.noarch.rpm
-RUN rpm -ivh centos-release-7-4.1708.el7.centos.x86_64.rpm
+#RUN rpm -ivh centos-release-7-4.1708.el7.centos.x86_64.rpm
 #RUN yum-config-manager --enable rhel-7-server-optional-rpm
 RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
 RUN yum -y install java-1.8.0-openjdk.x86_64 bind-utils nc telnet net-tools git apache-maven
