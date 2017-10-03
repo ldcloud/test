@@ -5,8 +5,8 @@
 # This one is simpler because I am not doing S2I or SSL enablement.
 # DO NOT USE IN PRODUCTION - this is just for teaching purposes
 
-FROM registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift
-
+#FROM registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift
+FROM registry.access.redhat.com/rhel7
 
 MAINTAINER Derek Foo <dfoodfoo@gmail.com>
 
