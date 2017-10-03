@@ -11,7 +11,6 @@ FROM registry.access.redhat.com/rhel7
 MAINTAINER Derek Foo <dfoodfoo@gmail.com>
 
 #RUN yum install -y --setopt=tsflags=nodocs httpd.x86_64 && yum clean all -y
-RUN sudo -i
 RUN yum install -y bind-utils nc telnet net-tools git
 
 # A custom httpd.conf that
