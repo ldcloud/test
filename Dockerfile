@@ -11,6 +11,7 @@ FROM registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift
 MAINTAINER Derek Foo <dfoodfoo@gmail.com>
 
 #RUN yum install -y --setopt=tsflags=nodocs httpd.x86_64 && yum clean all -y
+RUN su -
 RUN yum install -y bind-utils nc telnet net-tools git
 
 # A custom httpd.conf that
