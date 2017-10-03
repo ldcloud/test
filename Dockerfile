@@ -29,8 +29,8 @@ RUN echo "export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-0.b01.el7_4
 RUN echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> /etc/profile
 RUN echo "export MAVEN_HOME=/usr/share/maven" >> /etc/profile
 RUN echo "export PATH=\$MAVEN_HOME/bin:\$PATH" >> /etc/profile
-RUN mkdir /opt/citrus && chmod 777 /opt/citrus
-WORKDIR /opt/citrus
+RUN mkdir /citrus && chmod 777 /citrus
+WORKDIR /citrus
 
 # A custom httpd.conf that
 # 1. binds to port 8080
