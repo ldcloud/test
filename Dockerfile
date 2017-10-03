@@ -13,7 +13,8 @@ MAINTAINER Derek Foo <dfoodfoo@gmail.com>
 #RUN yum install -y --setopt=tsflags=nodocs httpd.x86_64 && yum clean all -y
 RUN yum -y install wget
 RUN wget http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7
-RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+# RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+RUN rpm --import RPM-GPG-KEY-CentOS-7
 RUN wget http://mirror.centos.org/centos-7/7/os/x86_64/Packages/centos-release-7-4.1708.el7.centos.x86_64.rpm
 RUN wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/aether-1.13.1-13.el7.noarch.rpm
