@@ -5,13 +5,13 @@
 # This one is simpler because I am not doing S2I or SSL enablement.
 # DO NOT USE IN PRODUCTION - this is just for teaching purposes
 
-FROM centos:centos7
+FROM registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift
 
 
 MAINTAINER Derek Foo <dfoodfoo@gmail.com>
 
 #RUN yum install -y --setopt=tsflags=nodocs httpd.x86_64 && yum clean all -y
-RUN yum install -y bind-utils nc telnet net-tools
+RUN yum install -y bind-utils nc telnet net-tools git
 
 # A custom httpd.conf that
 # 1. binds to port 8080
