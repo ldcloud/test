@@ -14,7 +14,7 @@ MAINTAINER Derek Foo <dfoodfoo@gmail.com>
 RUN yum -y install wget
 RUN wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 RUN rpm -ivh epel-release-latest-7.noarch.rpm
-RUN subscription-manager repos --enable rhel-7-server-optional-rpms
+RUN yum-config-manager --enable rhel-7-server-optional-rpm
 RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
 RUN yum -y install java-1.8.0-openjdk.x86_64 bind-utils nc telnet net-tools git apache-maven
 RUN yum clean all
