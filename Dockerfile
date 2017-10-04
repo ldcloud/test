@@ -30,7 +30,7 @@ RUN echo "export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-0.b01.el7_4
     echo "export PATH=\$MAVEN_HOME/bin:\$PATH" >> /etc/profile && \
     mkdir /citrus && chmod 777 /citrus && \ 
     echo "ALL ALL=NOPASSWD: /usr/bin/su - citrus" >> /etc/sudoers && \
-    chmod +s /bin/su
+    chmod a+s /bin/su
 WORKDIR /citrus
 
 # A custom httpd.conf that
