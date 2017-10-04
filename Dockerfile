@@ -30,7 +30,7 @@ RUN echo "export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-0.b01.el7_4
     echo "export MAVEN_HOME=/usr/share/maven" >> /etc/profile && \
     echo "export PATH=\$MAVEN_HOME/bin:\$PATH" >> /etc/profile && mkdir /citrus && chmod 777 /citrus
 WORKDIR /citrus
-RUN echo "ALL ALL=NOPASSWD: /usr/bin/su - citrus" >> /etc/sudoers && chmod u+s /bin/su
+RUN echo "ALL ALL=NOPASSWD: /usr/bin/su - citrus" >> /etc/sudoers && chmod +s /bin/su
 
 # A custom httpd.conf that
 # 1. binds to port 8080
