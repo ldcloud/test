@@ -22,15 +22,16 @@ RUN yum -y install wget
 #RUN rpm -ivh centos-release-7-4.1708.el7.centos.x86_64.rpm
 #RUN yum-config-manager --enable rhel-7-server-optional-rpm
 RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
-RUN yum -y install which java-1.8.0-openjdk.x86_64 bind-utils nc telnet net-tools git apache-maven sudo
-RUN yum clean all
+RUN yum -y install which java-1.8.0-openjdk.x86_64 bind-utils nc telnet net-tools git apache-maven sudo && yum clean all
 RUN groupadd -r citrusgrp -g 1001 && useradd -u 1001 -r -g citrusgrp -m -d /opt/maven -s /usr/bin/bash -c "citrus" citrus && chmod 755 /opt/maven && passwd -d citrus
 RUN echo "export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-0.b01.el7_4.x86_64" >> /etc/profile && \
     echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> /etc/profile && \
     echo "export MAVEN_HOME=/usr/share/maven" >> /etc/profile && \
-    echo "export PATH=\$MAVEN_HOME/bin:\$PATH" >> /etc/profile && mkdir /citrus && chmod 777 /citrus
+    echo "export PATH=\$MAVEN_HOME/bin:\$PATH" >> /etc/profile && \
+    mkdir /citrus && chmod 777 /citrus && \ 
+    echo "ALL ALL=NOPASSWD: /usr/bin/su - citrus" >> /etc/sudoers && \
+    chmod +s /bin/su
 WORKDIR /citrus
-RUN echo "ALL ALL=NOPASSWD: /usr/bin/su - citrus" >> /etc/sudoers && chmod +s /bin/su
 
 # A custom httpd.conf that
 # 1. binds to port 8080
